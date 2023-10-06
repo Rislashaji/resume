@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'dashboard' %}" class="nav-link">Home</a>
+      </li>
+     
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+     
+
+      <!-- Messages Dropdown Menu -->
+      
+      <!-- Notifications Dropdown Menu -->
+     
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+       
+        
+      </div>
+
+      <!-- SidebarSearch Form -->
+      
+      {% block menu %}
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+         
+         
+         
+         
+          
+             
+<!-- 
+          <li class="nav-item">
+            <a href="{% url 'company_reg' %}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                View Companies
+            
+              </p>
+            </a> -->
+           
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'view_resume' %}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                View Resumes
+            
+              </p>
+            </a>
+           
+          </li>
+         
+
+        </ul>
+      </nav>
+      {% endblock %}
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'register' %}">Register</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'login' %}">Login</a></li>
+         
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+ 
+    {% block content %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <title>Card Clock Bootstrap 4 | BootstrapTema</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+        body{
+        background: #C9D6FF;
+        background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+        background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+        }
+        </style>
+     
+        <body>
+        
+        <div class="container mb-3"><h1 class="text-center mb-4"></h1>
+        <p class="lead text-center"><a href="https://bootstraptema.ru/" target="_blank"></a></p>
+        <p class="lead text-center"></p>
+        <h2 class="text-center col-xl-12">Flexbox Clock </h2>
+        <div class="clearfix"></div><hr />
+        
+        <!-- flexbox clock row --><div class="row">
+        
+        <div class="col-md-3">
+        <div class="card bg-dark text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-primary text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-secondary text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-success text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-danger text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-warning text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-info text-white">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card bg-light">
+        <h3 class="card-title text-center">
+        <div class="d-flex flex-wrap justify-content-center mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </div>
+        </h3>
+        </div>
+        </div>
+        
+        </div><!-- /.flexbox clock row -->
+        
+         <h2 class="text-center col-xl-12 mt-4">Card Clock </h2><hr />
+        
+        <!-- clock row --><div class="row">
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-dark text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-primary text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-secondary text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-success text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-danger text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-warning text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="col-md-3">
+        <div class="card text-white">
+        <div class="card-body bg-info text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        
+        <div class="col-md-3">
+        <div class="card bg-light">
+        <div class="card-body bg-light text-center">
+        <p class="card-title mt-2">
+        <a><span class="badge hours"></span></a> :
+        <a><span class="badge min"></span></a> :
+        <a><span class="badge sec"></span></a>
+        </p>
+        </div>
+        </div>
+        </div>
+        
+        </div><!-- /.clock row -->
+        
+        </div><!-- /.container -->
+        
+        <script>
+        $(document).ready(function() {
+        setInterval( function() {
+        var hours = new Date().getHours();
+        $(".hours").html(( hours < 10 ? "0" : "" ) + hours);
+        }, 1000);
+        setInterval( function() {
+        var minutes = new Date().getMinutes();
+        $(".min").html(( minutes < 10 ? "0" : "" ) + minutes);
+        },1000);
+        setInterval( function() {
+        var seconds = new Date().getSeconds();
+        $(".sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+        },1000);
+        });
+        </script>
+        
+        <body>
+          {% endblock %}
+          
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.2.0
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.js' %}"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="{% static 'plugins/jquery-mousewheel/jquery.mousewheel.js' %}"></script>
+<script src="{% static 'plugins/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'plugins/jquery-mapael/jquery.mapael.min.js' %}"></script>
+<script src="{% static 'plugins/jquery-mapael/maps/usa_states.min.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dist/js/demo.js' %}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'dist/js/pages/dashboard2.js' %}"></script>
+</body>
+</html>

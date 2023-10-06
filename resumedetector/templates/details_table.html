@@ -1,0 +1,47 @@
+{% extends 'recruitment_dashboard.html' %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">DataTable</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Skill</th>
+                  <th>Qualification</th>
+                  <th>Email</th>
+                  <th>Designation</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Address</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+                </thead>
+           {% for i in data %}
+                <tr>
+                  <td>{{i.name}}</td>
+                  <td>{{i.skill}} </td>
+                  <td>{{i.qualification}}</td>
+                  <td> {{i.email}}</td>
+                  <td> {{i.job}}</td>
+                  <td> {{i.date}}</td>
+                  <td> {{i.description}}</td>
+                  <td> {{i.location}}</td>
+                  <td><a href="{% url 'edit' id=i.id %}"><button>Edit</button></td>
+                  <td><a href="{% url 'delete' id=i.id %}"><button>Delete</button></td>
+                </tr>
+                {% endfor %}
+       
+              </table>
+            </div>
+          </div>
+        </section>
+        {% endblock %}
