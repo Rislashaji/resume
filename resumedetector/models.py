@@ -10,6 +10,7 @@ class tb_cmpny_register(models.Model):
     uname=models.CharField(max_length=100,default="")
     pswd=models.CharField(max_length=100,default="")
     adrs=models.CharField(max_length=100,default="")
+    utype=models.CharField(max_length=100,default="")
    
    
 class tb_register(models.Model):

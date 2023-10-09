@@ -15,9 +15,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Contact Number</th>
-                  <th>Username</th>
                   <th>Email</th>
-                  <th>Qualification</th>
                   <th>Location</th>
 
                   
@@ -25,14 +23,13 @@
                 
                 </tr>
                 </thead>
-           {% for i in data %}
+
+           {% for i in data1 %}
                 <tr>
                   <td>{{i.name}}</td> 
                   <td>{{i.phn}}</td> 
-                  <td>{{i.uname}}</td> 
-                  <td>{{i.email}}</td> 
-                  <td>{{i.qualification}}</td> 
-                  <td>{{i.location}}</td> 
+                  <td>{{i.email}}</td>  
+                  <td>{{i.adrs}}</td> 
                   
                 </tr>
                 {% endfor %}

@@ -31,7 +31,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'dashboard' %}" class="nav-link">Home</a>
+        <a href="{% url 'recruitment_dashboard' %}" class="nav-link">Home</a>
       </li>
      
     </ul>
@@ -77,25 +77,35 @@
 
       <!-- SidebarSearch Form -->
       
-      {% block menu %}
+  
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
          
-         
-         
-         
-          
                <li class="nav-item">
-                <a href="{% url 'add_details' %}" class="nav-link">
+                <a href="{% url 'recruitment_dashboard' %}" class="nav-link">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>
-                    Add details
+                    Home
                   </p>
                 </a>
               </li>
+              {% if "id" in request.session %}
+
+              <li class="nav-item">
+                <a href="{% url 'add_details' %}" class="nav-link">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                Add Details
+                
+                  </p>
+                </a>
+               
+              </li>
+
+
 
               <li class="nav-item">
                 <a href="{% url 'detail_table' %}" class="nav-link">
@@ -120,10 +130,41 @@
            
           </li> 
          
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Log Out
+            
+              </p>
+            </a>
+           
+          </li> 
+
+          {% else %}
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+              Register
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+               Login
+              </p>
+            </a>
+          </li>
+
+          {% endif %}
 
         </ul>
       </nav>
-      {% endblock %}
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -140,9 +181,9 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+              <!-- <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
               <li class="breadcrumb-item"><a href="{% url 'register' %}">Register</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'login' %}">Login</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'login' %}">Login</a></li> -->
          
             </ol>
           </div><!-- /.col -->

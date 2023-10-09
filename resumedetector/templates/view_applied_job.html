@@ -2,47 +2,52 @@
 {% block content %}
 <section class="content">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">DataTable</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>Applied job</th>
+                                <th>Qualification</th>
+                                <th>Status</th>
+                                <th> Resume </th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            {% for application in data %}
+                            <tr>
+                                <td>{{ application.job_id.name }}</td>
+                                <td>{{ application.user_id.name }}</td>
+                                <td>{{ application.job_id.job }}</td>
+                                <td>{{ application.user_id.qualification }}</td>
+                                <td>{{ application.status }}</td>
+                                <td><a href="/admin_view_resume/?user_id={{ application.user_id.id }}" > View </a></td>
+                                <td>
+                                    <form method="post" action="{% url 'approve_application' id=application.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit">Approve</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4">No applied jobs found.</td>
+                            </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Name</th>
-                  <th>Applied job</th>
-                   <th>Qualification</th>
-                
-                  <th>Status</th>
-                  <th> Resume </th>
-                  
-              
-                
-                </tr>
-                </thead>
-                {% for application in data %}
-                <tr>
-                    <td>{{ application.job_id.name }}</td>
-                    <td>{{ application.user_id.name }}</td>
-                    <td>{{ application.job_id.job }}</td>
-                    <td>{{ application.user_id.qualification }}</td>
-                    <td>{{ application.status }}</td>
-                    <td> <a href="/admin_view_resume/?user_id={{ application.user_id.id }}" > View </a></td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="4">No applied jobs found.</td>
-                </tr>
-                {% endfor %}  
-                </tr>
-              
-              </table>
-            </div>
-          </div>
-        </section>
-        {% endblock %}
+        </div>
+    </div>
+</section>
+{% endblock %}

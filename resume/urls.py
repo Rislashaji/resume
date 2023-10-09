@@ -29,6 +29,7 @@ urlpatterns = [
     path('get_profile/',views.get_profile),
     path('apply_job/',views.apply_job),
     path('edit_profile/',views.edit_profile),
+    path('view_approved_job/',views.view_approved_job)
 
 
 ]

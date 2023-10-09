@@ -18,7 +18,7 @@ def getregister(request):
 	data=tb_register.objects.all()
 	serializer = RegisterSerializer(data, many=True)
 	response_data = {"data":serializer.data}
-	return Response(response_data )
+	return Response(response_data)
 
 
 @api_view(['POST'])
@@ -180,3 +180,11 @@ def list_company(request):
 
     return Response(response_data)
 
+
+@api_view(['POST'])
+def view_approved_job(request):
+    user_id = request.data.get('user_id') 
+    job_applications = tb_job_application.objects.filter(status='Approved',user_id=user_id).select_related('job_id', 'user_id')
+    serializer = ApprovedSerializer(job_applications, many=True)
+    response_data = {"data":serializer.data}
+    return Response(response_data)

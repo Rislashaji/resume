@@ -24,7 +24,21 @@ class SkillSerializer(serializers.ModelSerializer):
 class CompanySerializer(serializers.ModelSerializer):
 	class Meta:
 		model=tb_details
-		exclude = ('qualification','user_id')  		
+		exclude = ('qualification','user_id')  	
+
+
+
+class ApprovedCompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = tb_cmpny_register
+        exclude = ('id', 'uname', 'pswd') 
+
+class ApprovedSerializer(serializers.ModelSerializer):
+    details = ApprovedCompanySerializer(source='cmpny_id', read_only=True)  
+
+    class Meta:
+        model = tb_job_application
+        fields = ['details']
 
 
 class ProfileSerializer(serializers.ModelSerializer):
